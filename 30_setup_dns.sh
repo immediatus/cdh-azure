@@ -1,8 +1,8 @@
 #!/bin/bash
 
-USERNAME=cdh
+source ./env
 
-ssh -t $USERNAME@cdh-manager.cloudapp.net " \
+ssh -t $USERNAME@$MASTER.cloudapp.net " \
 # Temporary replace public DNS
   sudo sed -e '/^nameserver/s/^/#/g' -i /etc/resolv.conf;
   sudo sed -e '/^#nameserver/a nameserver 8.8.8.8' -i /etc/resolv.conf; \

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # Check Azure CLI tools are installed
 type azure >/dev/null 2>&1 || {
@@ -8,7 +8,7 @@ type azure >/dev/null 2>&1 || {
   exit 1
 }         
 
-USERNAME='dima'
+USERNAME='cdh'
 MASTER=cdh-manager
 WORKERS=( cdh-worker-1 cdh-worker-2 )
 UBUNTU_VM_IMAGE='b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-12_04_4-LTS-amd64-server-20140514-en-us-30GB'
