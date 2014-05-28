@@ -1,7 +1,9 @@
 #!/bin/bash -e
 
-USERNAME=cdh
+source ./env
+
+ALL_NODES=( $MASTER ${WORKERS[@]} )
 # Fix hostsnames on Manager and Workers
-for i in cdh-manager cdh-worker-1 cdh-worker-2; do
+for i in ${ALL_NODES[@]}; do
   ssh $USERNAME@${i}.cloudapp.net "sudo sed -e '/127.0.0.1 localhost/a 127.0.1.1 '"${i}"' ' -i /etc/hosts"
 done

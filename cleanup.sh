@@ -2,7 +2,7 @@
 
 echo Deleting Virutal Machines
 for vm in `azure vm list --json | jshon -a -e VMName -u`; do
-  azure vm delete --verbose $vm
+  azure vm delete --quiet $vm
 done
 
 echo Deleting VM Disks
