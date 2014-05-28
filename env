@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Set user account for virtual machines
+USERNAME=cdh
+
+# Name of the master machine
+# DNS server and CDH manager will be installed there
+MASTER=cdh-manager
+
+# A set of worker nodes
+# Spark workers will be installed there
+WORKERS=( cdh-worker-1 cdh-worker-2 )
